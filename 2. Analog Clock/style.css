@@ -31,3 +31,69 @@ body {
   color: #0668d8;
   transform: rotate(calc(30deg * var(--v)));
 }
+.num b {
+  transform: rotate(calc(-30deg * var(--v)));
+  display: inline-block;
+  font-size: 24px;
+}
+.dot {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border-radius: 50%;
+  box-shadow:
+    1px 2px 10px rgba(43, 42, 42, 0.226),
+    -1px -2px 10px rgb(0, 0, 0);
+}
+
+.digi-clock {
+  width: 30%;
+  height: 10%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  font-size: 18px;
+  background-color: #000;
+  bottom: 27%;
+  background: transparent;
+  box-shadow:
+    inset 1px 2px 10px rgba(0, 0, 0, 0.8),
+    -1px -2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.dh {
+  color: rgb(4, 213, 4);
+}
+.dm {
+  color: rgb(12, 158, 148);
+}
+.ds {
+  color: rgb(233, 42, 42);
+}
+.hours-hand,
+.minutes-hand,
+.seconds-hand {
+  position: absolute;
+  border-radius: 20px;
+}
+
+.hours-hand {
+  width: 0.9%;
+  height: 30%;
+  top: 19.8%;
+  background: rgb(212, 48, 48);
+  /* opacity: 0; */
+}
+
+.minutes-hand {
+  width: 0.85%;
+  height: 30.5%;
+  top: 17.8%;
+  background-color: aqua;
+  /* opacity: 0; */
+}
