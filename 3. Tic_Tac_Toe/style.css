@@ -41,6 +41,11 @@ body {
   box-shadow:
     1px 2px 10px rgba(99, 97, 97, 0.8),
     -1px 2px 10px rgba(99, 97, 97, 0.8);
+  color: aliceblue;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .boxes:hover {
   box-shadow: 2px 2px 10px rgba(99, 97, 97, 0.8);
