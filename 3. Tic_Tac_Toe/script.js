@@ -1,4 +1,8 @@
 let boxes = document.querySelectorAll(".boxes");
+let turn1 = document.querySelector(".turn1");
+let turn2 = document.querySelector(".turn2");
+let msg = document.querySelector(".msg");
+let span = document.querySelector("#result");
 let turnX = true;
 
 let WinnerCondition = [
@@ -17,10 +21,14 @@ boxes.forEach((box) => {
     if (turnX) {
       box.innerText = "X";
       box.style.color = "white";
+      turn2.classList.add("b-s");
+      turn1.classList.remove("b-s");
       turnX = false;
     } else {
       box.innerText = "O";
       box.style.color = "red";
+      turn1.classList.add("b-s");
+      turn2.classList.remove("b-s");
       turnX = true;
     }
     checkWinner();
@@ -44,4 +52,6 @@ function checkWinner() {
   }
 }
 
-function showResult(winner) {}
+function showResult(winner) {
+  msg.classList.remove("hide");
+}

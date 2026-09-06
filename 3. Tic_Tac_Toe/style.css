@@ -74,6 +74,7 @@ body {
   justify-content: center;
   font-size: 20px;
   font-weight: 800;
+  border-radius: 10px;
 }
 
 .box1 {
@@ -96,4 +97,21 @@ body {
 }
 .turn2 {
   color: rgb(17, 52, 182);
+}
+
+.b-s {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.msg {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+}
+
+#hide {
+  display: none;
 }
