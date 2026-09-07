@@ -11,40 +11,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2e2d2d;
+  background: #1e1e2e;
 }
 
 .container {
   width: 80vw;
-  height: 70vh;
+  height: 90vh;
   max-width: 450px;
-  background-color: #0c97af;
-  gap: 0px 10px;
-  padding: 2px 20px;
+  background-color: #2a2a3d;
+  padding: 20px;
+  position: relative;
+  border-radius: 12px;
 }
 
-.games {
-  width: 100%;
-  height: 55%;
-  display: grid;
-  grid-template-rows: 33% 33% 33%;
-  grid-template-columns: 33% 33% 33%;
-  gap: 5px;
-}
-.boxes {
-  background-color: transparent;
-  box-shadow:
-    1px 2px 10px rgba(99, 97, 97, 0.8),
-    -1px 2px 10px rgba(99, 97, 97, 0.8);
-  color: aliceblue;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.boxes:hover {
-  box-shadow: 2px 2px 10px rgba(99, 97, 97, 0.8);
-}
+/* Player turn */
+
 .turn {
   width: 100%;
   height: 20%;
@@ -56,10 +37,8 @@ body {
 .choose {
   width: 40%;
   height: 50%;
-  background: #000;
-  box-shadow:
-    2px 5px 10px rgba(0, 0, 0, 0.8),
-    -2px 5px 10px rgba(0, 0, 0, 0.8);
+  background: #151522;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -77,41 +56,144 @@ body {
   border-radius: 10px;
 }
 
-.box1 {
-  border-radius: 10px 0px 0px 10px;
-}
-
-.box3 {
-  border-radius: 0px 10px 0px 10px;
-}
-
-.box7 {
-  border-radius: 0px 0px 0px 10px;
-}
-.box9 {
-  border-radius: 0px 0px 10px 0px;
-}
-
 .turn1 {
-  color: rgb(174, 51, 96);
+  color: #38bdf8;
 }
+
 .turn2 {
-  color: rgb(17, 52, 182);
+  color: #a78bfa;
 }
 
 .b-s {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
-.msg {
+/* Game board */
+
+.games {
   width: 100%;
-  height: 25%;
+  height: 55%;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 5px;
+}
+
+.boxes {
+  background-color: transparent;
+  box-shadow:
+    1px 2px 10px rgba(0, 0, 0, 0.5),
+    -1px 2px 10px rgba(0, 0, 0, 0.3);
+
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: aliceblue;
+
+  border: none;
+  border-radius: 5px;
 }
 
-#hide {
+.hover:hover {
+  background-color: #35354d;
+  cursor: pointer;
+}
+
+/* X and O colors */
+
+.boxes:nth-child(odd) {
+  color: #38bdf8;
+}
+
+.boxes:nth-child(even) {
+  color: #a78bfa;
+}
+
+/* Board corners */
+
+.box1 {
+  border-radius: 10px 0 0 0;
+}
+
+.box3 {
+  border-radius: 0 10px 0 0;
+}
+
+.box7 {
+  border-radius: 0 0 0 10px;
+}
+
+.box9 {
+  border-radius: 0 0 10px 0;
+}
+
+/* Winner popup */
+
+.msg {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+
+  width: 80%;
+  height: 20%;
+
+  background-color: #151522;
+  border: 1px solid #38bdf8;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.msg span {
+  margin-left: 8px;
+}
+
+.hide {
   display: none;
+}
+
+/* Buttons */
+
+.btn {
+  position: absolute;
+  bottom: 30px;
+
+  width: 25%;
+  padding: 7px;
+
+  background: #151522;
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.btn:hover {
+  background-color: #35354d;
+  cursor: pointer;
+}
+
+#reset {
+  left: 20px;
+}
+
+#ng {
+  right: 20px;
 }
